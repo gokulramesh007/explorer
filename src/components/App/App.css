@@ -5,10 +5,31 @@ html body {
 }
 
 :root {
+  /* Color variables  */
   --dark-magenta: #840056;
   --white: #fff;
   --black: #000;
   --bright-red-search-highlight: #ee0000;
   --light-grey: #cec9c9;
+
+  /* Size Variables */
+  --h1: 38px;
+  --h2: 34px;
+  --h3: 30px;
+  --h4: 26px;
+  --h5: 20px;
+  --h6: 19px;
+  --input: 18px;
+  --regular17: 17px;
+  --regular: 16px;
+  --regular15: 15px;
+  --medium: 14px;
+  --smallMedium: 13px;
+  --small: 12px;
+  --smaller: 10px;
+  --tiny: 8.5px;
+  --minute: 6px;
+  --large: 25px;
+  --extraLarge: 50px;
 }
 /* Header CSS - END */
