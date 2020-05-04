@@ -1,4 +1,5 @@
 import Strings from "./Strings";
 import Images from "./Images";
+import Colors from "./Themes";
 
-export { Strings, Images };
+export { Strings, Images, Colors };

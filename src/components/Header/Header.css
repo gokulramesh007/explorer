@@ -1,0 +1,23 @@
+/* Header CSS - START */
+.header-container {
+  padding: 10px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-container.dark {
+  background-color: var(--dark-magenta);
+}
+.header-container.light {
+  background-color: var(--white);
+}
+.header-container .title {
+  text-transform: uppercase;
+}
+.header-container .title.dark {
+  color: var(--white);
+}
+.header-container .title.light {
+  color: var(--dark-magenta);
+}
+/* Header CSS - END */
