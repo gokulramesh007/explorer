@@ -1,0 +1,18 @@
+/* Banner CSS - START */
+.banner {
+  padding: 50px;
+  background-color: var(--dark-magenta);
+}
+.banner.light {
+  background-color: var(--white);
+}
+.banner-text {
+  color: var(--white);
+  font-size: var(--h3);
+  font-weight: 300;
+}
+
+.banner-text.light {
+  color: var(--dark-magenta);
+}
+/* Banner CSS - END */
