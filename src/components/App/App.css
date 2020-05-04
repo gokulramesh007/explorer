@@ -1,0 +1,14 @@
+/* App CSS - START */
+html body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  margin: 0;
+}
+
+:root {
+  --dark-magenta: #840056;
+  --white: #fff;
+  --black: #000;
+  --bright-red-search-highlight: #ee0000;
+  --light-grey: #cec9c9;
+}
+/* Header CSS - END */
