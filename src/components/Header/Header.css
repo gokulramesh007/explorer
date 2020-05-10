@@ -15,6 +15,9 @@
   font-size: var(--h4);
   text-transform: uppercase;
 }
+.header-container .title:hover {
+  cursor: pointer;
+}
 .header-container .title.dark {
   color: var(--white);
 }
