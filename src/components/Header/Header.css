@@ -1,6 +1,6 @@
 /* Header CSS - START */
 .header-container {
-  padding: 10px 50px;
+  padding: 20px 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,6 +12,7 @@
   background-color: var(--white);
 }
 .header-container .title {
+  font-size: var(--h4);
   text-transform: uppercase;
 }
 .header-container .title.dark {

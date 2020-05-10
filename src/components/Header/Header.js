@@ -47,9 +47,9 @@ export default class Header extends React.Component {
         : Strings.APPLICATION.HEADER.THEMES.DARK;
     return (
       <div className={`header-container ${theme}`}>
-        <h2 className={`title ${theme}`}>
+        <div className={`title ${theme}`}>
           {Strings.APPLICATION.TITLE}
-        </h2>
+        </div>
         <SearchBar theme={theme} data={this.state.locations} />
       </div>
     );

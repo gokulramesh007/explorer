@@ -15,7 +15,6 @@ const Routes = () => {
         />
         <Route
           path={Strings.APPLICATION.ROUTES.DETAILS_SCREEN}
-          exact
           component={DetailsScreen}
         />
       </div>

@@ -1,98 +1,93 @@
 import React from "react";
-import Autosuggest from "react-autosuggest";
-import AutosuggestHighlightMatch from "autosuggest-highlight/match";
-import AutosuggestHighlightParse from "autosuggest-highlight/parse";
 import "./SearchBar.css";
+import { withRouter } from "react-router-dom";
+import { Strings } from "../../constants";
 
-export default class SearchBar extends React.Component {
+class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: "",
       suggestions: props.data
     };
   }
 
-  getSuggestions = value => {
-    const escapedValue = this.escapeRegexCharacters(value.trim());
+  /**** LIFE CYCLE LISTENERS START ****/
 
-    if (escapedValue === "") {
-      return [];
-    }
+  componentWillReceiveProps = props => {
+    this.setState({
+      suggestions: props.data
+    });
+  };
 
-    const regex = new RegExp("\\b" + escapedValue, "i");
+  /**** LIFE CYCLE LISTENERS END ****/
 
-    return this.props.data.filter(place =>
-      regex.test(this.getSuggestionValue(place))
+  /**** HELPER FUNCTIONS START ****/
+
+  renderSearchResults = () => {
+    let searchResults = [];
+    let filteredSuggestions = [];
+    filteredSuggestions = this.filterResults(
+      this.state.suggestions,
+      this.state.searchkey
     );
+    filteredSuggestions.forEach(item => {
+      searchResults.push(
+        <div
+          className="suggestion-item-wrapper"
+          key={item.id}
+          onClick={this.handleSearchChange}
+        >
+          {item.id}
+        </div>
+      );
+    });
+    return searchResults;
   };
 
-  getSuggestionValue = suggestion => {
-    return `${suggestion.location}`;
-  };
-
-  onSuggestionsFetchRequested = ({ value }) => {
+  handleSearchChange = event => {
+    let searchKey = event.target.innerHTML;
     this.setState({
-      suggestions: this.getSuggestions(value)
+      searchkey: ""
+    });
+    this.props.history.push(Strings.APPLICATION.DETAILS_PAGE_ROUTE + searchKey);
+  };
+
+  handleInputChange = event => {
+    this.setState({
+      searchkey: event.target.value
     });
   };
 
-  onSuggestionsClearRequested = () => {
-    this.setState({
-      suggestions: []
+  filterResults = (suggestions, searchkey) => {
+    let filteredSuggestions = [];
+    filteredSuggestions = suggestions.filter(function(suggestion) {
+      return suggestion.location.toLowerCase().includes(searchkey);
     });
+    return filteredSuggestions;
   };
 
-  onChange = (event, { newValue }) => {
-    this.setState({
-      value: newValue
-    });
-  };
-
-  renderSuggestion(suggestion, { query }) {
-    const suggestionText = `${suggestion.location}`;
-    const matches = AutosuggestHighlightMatch(suggestionText, query);
-    const parts = AutosuggestHighlightParse(suggestionText, matches);
-
-    return (
-      <span
-        className={"suggestion-content search-result-image " + suggestion.id}
-      >
-        <span className="name">
-          {parts.map((part, index) => {
-            const className = part.highlight ? "highlight" : null;
-
-            return (
-              <span className={className} key={index}>
-                {part.text}
-              </span>
-            );
-          })}
-        </span>
-      </span>
-    );
-  }
-
-  escapeRegexCharacters = str => {
-    return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  };
+  /**** HELPER FUNCTIONS END ****/
 
   render() {
-    const { value, suggestions } = this.state;
-    const inputProps = {
-      placeholder: "Search",
-      value,
-      onChange: this.onChange
-    };
+    const searchResultsContainer = this.state.searchkey !== "" ? "show" : "";
     return (
-      <Autosuggest
-        suggestions={suggestions}
-        onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-        onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-        getSuggestionValue={this.getSuggestionValue}
-        renderSuggestion={this.renderSuggestion}
-        inputProps={inputProps}
-      />
+      <div>
+        <input
+          type="text"
+          name="explorer-search-section"
+          className="explorer-search-section"
+          value={this.state.searchkey || ""}
+          placeholder="Search"
+          onChange={this.handleInputChange}
+        />
+        <div
+          className={`explorer__suggestions-container ${searchResultsContainer}`}
+        >
+          {this.renderSearchResults()}
+        </div>
+      </div>
     );
   }
 }
+
+export default withRouter(SearchBar);
