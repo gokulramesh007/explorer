@@ -1,0 +1,47 @@
+/* DETAILS SCREEN CSS - START */
+.location-details-wrapper {
+  margin: 0 50px;
+}
+.location-details-wrapper .location-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 25px 50px;
+}
+.location-details-wrapper .location-wrapper .location-details {
+  margin: 0 auto;
+  text-align: center;
+  font-size: var(--h2);
+  color: var(--dark-magenta);
+  font-weight: bold;
+  max-width: 550px;
+}
+.location-details-wrapper .location-wrapper .location-details img {
+  margin-bottom: 10px;
+}
+.location-details-wrapper .separator {
+  height: 1px;
+  background-color: var(--black);
+}
+.location-details-wrapper .weather-details-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  font-size: var(--h5);
+}
+.location-details-wrapper .weather-details-wrapper .location-title {
+  text-transform: capitalize;
+  color: var(--dark-magenta);
+}
+.location-details-wrapper .location-description .description-section {
+  margin: 20px 0;
+}
+.location-details-wrapper .location-description .description-section.center {
+  text-align: center;
+  padding: 100px;
+}
+.location-details-wrapper .similar-locations {
+  margin: 50px 0;
+  font-size: var(--h3);
+  color: var(--dark-magenta);
+}
+/* DETAILS SCREEN CSS - END */
