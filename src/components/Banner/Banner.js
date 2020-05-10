@@ -9,7 +9,7 @@ const Banner = props => {
       <div className={`banner-text ${theme}`}>
         {props.text.map(function(item, key) {
           return (
-            <div key={key}>
+            <div className="banner-text-content" key={key}>
               {item}
             </div>
           );

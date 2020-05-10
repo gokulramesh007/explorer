@@ -4,6 +4,10 @@ html body {
   margin: 0;
 }
 
+*{
+    box-sizing: border-box;
+}
+
 :root {
   /* Color variables  */
   --dark-magenta: #840056;
@@ -11,6 +15,7 @@ html body {
   --black: #000;
   --bright-red-search-highlight: #ee0000;
   --light-grey: #cec9c9;
+  --light-black-shade: #A8A8A8;
 
   /* Size Variables */
   --h1: 38px;

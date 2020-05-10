@@ -11,8 +11,10 @@
   font-size: var(--h3);
   font-weight: 300;
 }
-
 .banner-text.light {
   color: var(--dark-magenta);
+}
+.banner-text-content:not(:last-child){
+  margin-bottom: 5px;
 }
 /* Banner CSS - END */

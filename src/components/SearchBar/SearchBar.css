@@ -1,22 +1,22 @@
-/* Header CSS - START */
+/* SearchBar CSS - START */
 .react-autosuggest__container {
   position: relative;
 }
 
-.react-autosuggest__input {
+.explorer-search-section {
   width: 240px;
-  height: 20px;
+  height: var(--h3);
   padding: 10px 20px;
   font-weight: 300;
   font-size: 16px;
   border: 1px solid var(--dark-magenta);
 }
 
-.react-autosuggest__input::placeholder {
+.explorer-search-section::placeholder {
   color: var(--light-grey);
 }
 
-.react-autosuggest__input:focus {
+.explorer-search-section:focus {
   outline: none;
 }
 
@@ -25,16 +25,19 @@
   border-bottom-right-radius: 0;
 }
 
-.react-autosuggest__suggestions-container {
+.explorer__suggestions-container {
   display: none;
 }
 
-.react-autosuggest__container--open .react-autosuggest__suggestions-container {
+.explorer__suggestions-container.show {
   display: block;
   position: absolute;
-  top: 41px;
-  width: 280px;
-  border: 1px solid #aaa;
+  top: 50px;
+  width: 240px;
+  max-height: 150px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  border: 1px solid var(--dark-magenta);
   background-color: var(--white);
   font-weight: 300;
   font-size: 16px;
@@ -42,68 +45,18 @@
   border-bottom-right-radius: 4px;
   z-index: 2;
 }
-
-.react-autosuggest__suggestions-list {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-.react-autosuggest__suggestion {
-  cursor: pointer;
-  padding: 10px 20px;
-}
-
-.react-autosuggest__suggestion:not(:first-child) {
-  border-top: 1px solid #ddd;
-}
-
-.suggestion-content {
+.explorer__suggestions-container.show .suggestion-item-wrapper {
   display: flex;
+  justify-content: flex-start;
   align-items: center;
-  background-repeat: no-repeat;
+  padding: 15px;
+  text-transform: capitalize;
 }
-
-.name {
-  margin-left: 68px;
-  line-height: 45px;
+.explorer__suggestions-container.show .suggestion-item-wrapper:not(:last-child) {
+  border-bottom: 1px solid var(--dark-magenta);
 }
-
-.highlight {
-  color: var(--bright-red-search-highlight);
-  font-weight: bold;
+.explorer__suggestions-container.show .suggestion-item-wrapper:hover {
+  background-color: var(--dark-magenta);
+  color: var(--white);
 }
-
-.react-autosuggest__suggestion--focused .highlight {
-  color: var(--black);
-}
-
-.search-result-image {
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-.masangudi {
-  background-image: url("../../assets/masangudi.png");
-}
-
-.pollachi {
-  background-image: url("../../assets/pollachi.png");
-}
-
-.chidambaram {
-  background-image: url("../../assets/chidambaram.png");
-}
-
-.kumbakonam {
-  background-image: url("../../assets/kumbakonam.png");
-}
-
-.thanjavur {
-  background-image: url("../../assets/thanjavur.png");
-}
-
-.tirunelveli {
-  background-image: url("../../assets/tirunelveli.png");
-}
-/* Header CSS - END */
+/* SearchBar CSS - END */
