@@ -32,6 +32,11 @@ class Form extends React.Component {
         "\nWhere to : " +
         this.state.whereTo
     );
+    this.setState({
+      name: "",
+      homeTown: "",
+      whereTo: ""
+    });
   };
 
   render() {

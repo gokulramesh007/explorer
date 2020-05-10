@@ -131,7 +131,7 @@ export default class DetailsScreen extends React.Component {
       }
     } else {
       description.push(
-        <div className="description-section" key={0}>
+        <div className="description-section center" key={0}>
           {Strings.APPLICATION.DETAILS_SCREEN.NO_DESCRIPTION}
         </div>
       );
