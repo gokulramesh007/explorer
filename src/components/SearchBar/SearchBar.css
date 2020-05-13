@@ -1,8 +1,4 @@
 /* SearchBar CSS - START */
-.react-autosuggest__container {
-  position: relative;
-}
-
 .explorer-search-section {
   width: 240px;
   height: var(--h3);
@@ -11,24 +7,15 @@
   font-size: 16px;
   border: 1px solid var(--dark-magenta);
 }
-
 .explorer-search-section::placeholder {
   color: var(--light-grey);
 }
-
 .explorer-search-section:focus {
   outline: none;
 }
-
-.react-autosuggest__container--open .react-autosuggest__input {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
 .explorer__suggestions-container {
   display: none;
 }
-
 .explorer__suggestions-container.show {
   display: block;
   position: absolute;
@@ -56,7 +43,6 @@
   border-bottom: 1px solid var(--dark-magenta);
 }
 .explorer__suggestions-container.show .suggestion-item-wrapper:hover {
-  background-color: var(--dark-magenta);
-  color: var(--white);
+  background-color: var(--light-grey);
 }
 /* SearchBar CSS - END */
