@@ -1,12 +1,10 @@
 import React from "react";
-import { Header } from "../components/Header";
+import { Header, Loader, LocationList } from "../components";
 import { Strings, Images } from "../constants";
-import { Loader } from "../components/Loader";
-import { List } from "../components/List";
 import {
-  FetchSpecificLocation,
-  FetchSimilarLocations,
-  FetchWeather
+  fetchSpecificLocation,
+  fetchSimilarLocations,
+  fetchWeather
 } from "../services";
 import "./DetailsScreen.css";
 export default class DetailsScreen extends React.Component {
@@ -54,7 +52,7 @@ export default class DetailsScreen extends React.Component {
   /**** SERVICE CALLS START ****/
 
   _fetchLocation = place => {
-    FetchSpecificLocation(place)
+    fetchSpecificLocation(place)
       .then(response => {
         if (response && response.status === 200) {
           this.setState({
@@ -70,7 +68,7 @@ export default class DetailsScreen extends React.Component {
   };
 
   _fetchSimilarLocations = place => {
-    FetchSimilarLocations(place)
+    fetchSimilarLocations(place)
       .then(response => {
         if (response && response.status === 200) {
           this.setState({
@@ -86,7 +84,7 @@ export default class DetailsScreen extends React.Component {
   };
 
   _fetchWeather = place => {
-    FetchWeather(place)
+    fetchWeather(place)
       .then(response => {
         if (response && response.status === 200) {
           if (response.data && response.data.main && response.data.main.temp) {
@@ -192,7 +190,7 @@ export default class DetailsScreen extends React.Component {
           <div className="similar-locations">
             {Strings.APPLICATION.DETAILS_SCREEN.SIMILAR_LOCATIONS}
           </div>
-          <List data={this.state.similarLocations} />
+          <LocationList data={this.state.similarLocations} />
         </div>
         {isLoading ? <Loader /> : null}
       </div>

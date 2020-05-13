@@ -9,6 +9,9 @@ const String = {
       THEMES: {
         LIGHT: "light",
         DARK: "dark"
+      },
+      SEARCH: {
+        NO_SEARCH_RESULTS: "No Searches found"
       }
     },
     HOME_SCREEN: {

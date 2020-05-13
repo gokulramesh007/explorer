@@ -7,7 +7,6 @@ import { Strings } from "../constants";
 const Routes = () => {
   return (
     <BrowserRouter>
-      <div>
         <Route
           path={Strings.APPLICATION.ROUTES.HOME}
           exact
@@ -17,7 +16,6 @@ const Routes = () => {
           path={Strings.APPLICATION.ROUTES.DETAILS_SCREEN}
           component={DetailsScreen}
         />
-      </div>
     </BrowserRouter>
   );
 };

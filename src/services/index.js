@@ -1,13 +1,13 @@
 import {
-  FetchAllLocations,
-  FetchSpecificLocation,
-  FetchSimilarLocations
+  fetchAllLocations,
+  fetchSpecificLocation,
+  fetchSimilarLocations
 } from "./LocationService";
-import { FetchWeather } from "./WeatherService";
+import { fetchWeather } from "./WeatherService";
 
 export {
-  FetchAllLocations,
-  FetchSpecificLocation,
-  FetchSimilarLocations,
-  FetchWeather
+  fetchAllLocations,
+  fetchSpecificLocation,
+  fetchSimilarLocations,
+  fetchWeather
 };

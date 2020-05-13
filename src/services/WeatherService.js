@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Strings } from "../constants";
 
-export const FetchWeather = async place => {
+export const fetchWeather = async place => {
   try {
     let response = await axios.get(Strings.APPLICATION.API.WEATHER, {
       params: {

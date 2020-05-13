@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Strings } from "../constants";
 
-export const FetchAllLocations = async () => {
+export const fetchAllLocations = async () => {
   try {
     let response = await axios.get(Strings.APPLICATION.API.ALL_LOCATIONS, {});
     return response;
@@ -10,7 +10,7 @@ export const FetchAllLocations = async () => {
   }
 };
 
-export const FetchSpecificLocation = async place => {
+export const fetchSpecificLocation = async place => {
   try {
     let response = await axios.get(
       Strings.APPLICATION.API.SPECIFIC_LOCATION + place,
@@ -22,7 +22,7 @@ export const FetchSpecificLocation = async place => {
   }
 };
 
-export const FetchSimilarLocations = async place => {
+export const fetchSimilarLocations = async place => {
   try {
     let response = await axios.get(
       Strings.APPLICATION.API.SIMILAR_LOCATION + place,

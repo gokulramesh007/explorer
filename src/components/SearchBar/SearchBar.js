@@ -30,17 +30,25 @@ class SearchBar extends React.Component {
       this.state.suggestions,
       this.state.searchkey
     );
-    filteredSuggestions.forEach(item => {
+    if (filteredSuggestions.length > 0) {
+      filteredSuggestions.forEach(item => {
+        searchResults.push(
+          <div
+            className="suggestion-item-wrapper"
+            key={item.id}
+            onClick={this._handleSearchChange}
+          >
+            {item.id}
+          </div>
+        );
+      });
+    } else if(this.state.searchkey) {
       searchResults.push(
-        <div
-          className="suggestion-item-wrapper"
-          key={item.id}
-          onClick={this._handleSearchChange}
-        >
-          {item.id}
+        <div className="suggestion-item-wrapper" key={0}>
+          {Strings.APPLICATION.HEADER.SEARCH.NO_SEARCH_RESULTS}
         </div>
       );
-    });
+    }
     return searchResults;
   };
 

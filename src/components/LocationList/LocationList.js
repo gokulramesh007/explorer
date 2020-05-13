@@ -1,8 +1,8 @@
 import React from "react";
-import { LocationTile } from "../Cards";
-import "./List.css";
+import { LocationTile } from "../../components";
+import "./LocationList.css";
 
-const List = props => {
+const LocationList = props => {
   const _renderLocationTiles = () => {
     let locationList = [];
     props.data.forEach(item => {
@@ -14,7 +14,7 @@ const List = props => {
     });
     return locationList;
   };
-  const columns = props.column ? props.column : "three";
+  const columns = props.column || "three";
 
   return (
     <div className={`list-wrapper ${columns}`}>
@@ -23,4 +23,4 @@ const List = props => {
   );
 };
 
-export default List;
+export default LocationList;

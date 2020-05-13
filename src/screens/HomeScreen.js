@@ -1,12 +1,8 @@
 import React from "react";
 import "./HomeScreen.css";
-import { Header } from "../components/Header";
+import { Header, Banner, LocationList, Loader, Form } from "../components";
 import { Strings } from "../constants";
-import { Banner } from "../components/Banner";
-import { List } from "../components/List";
-import { Loader } from "../components/Loader";
-import { Form } from "../components/Form";
-import { FetchAllLocations } from "../services/LocationService";
+import { fetchAllLocations } from "../services/LocationService";
 export default class HomeScreen extends React.Component {
   constructor() {
     super();
@@ -14,20 +10,19 @@ export default class HomeScreen extends React.Component {
       isLoading: true,
       locations: []
     };
+    this._fetchLocations();
   }
 
   /**** LIFE CYCLE LISTENERS START ****/
 
-  componentDidMount = () => {
-    this._fetchLanguages();
-  };
+  componentDidMount = () => {};
 
   /**** LIFE CYCLE LISTENERS END ****/
 
   /**** SERVICE CALLS START ****/
 
-  _fetchLanguages = () => {
-    FetchAllLocations()
+  _fetchLocations = () => {
+    fetchAllLocations()
       .then(response => {
         this.setState({
           isLoading: false
@@ -62,7 +57,7 @@ export default class HomeScreen extends React.Component {
             {Strings.APPLICATION.HOME_SCREEN.EXPLORE_TEXT}
           </div>
 
-          <List data={this.state.locations} />
+          <LocationList data={this.state.locations} />
 
           <div className="explore-block">
             {Strings.APPLICATION.HOME_SCREEN.LIKE_TO_TRAVEL_TEXT}

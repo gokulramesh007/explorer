@@ -1,7 +1,7 @@
 import React from "react";
 import { Strings } from "../../constants";
-import { SearchBar } from "../SearchBar";
-import { FetchAllLocations } from "../../services/LocationService";
+import { SearchBar } from "../../components";
+import { fetchAllLocations } from "../../services/LocationService";
 import { withRouter } from "react-router-dom";
 import "./Header.css";
 
@@ -24,7 +24,7 @@ class Header extends React.Component {
   /**** SERVICE CALLS START ****/
 
   _fetchLanguages = () => {
-    FetchAllLocations()
+    fetchAllLocations()
       .then(response => {
         if (response && response.status === 200) {
           this.setState({
