@@ -58,7 +58,7 @@ export default class DetailsScreen extends React.Component {
             locations: response.data
           });
         } else {
-          console.error(response.statusText);
+          console.log(response.statusText);
         }
       })
       .catch(error => {
@@ -74,7 +74,7 @@ export default class DetailsScreen extends React.Component {
             similarLocations: response.data
           });
         } else {
-          console.error(response.statusText);
+          console.log(response.statusText);
         }
       })
       .catch(error => {
@@ -102,7 +102,7 @@ export default class DetailsScreen extends React.Component {
           this.setState({
             temperature: null
           });
-          console.error(response);
+          console.log(response);
         }
       })
       .catch(error => {

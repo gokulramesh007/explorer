@@ -37,7 +37,7 @@ export default class HomeScreen extends React.Component {
             locations: response.data
           });
         } else {
-          console.error(response.statusText);
+          console.log(response.statusText);
         }
       })
       .catch(error => {
