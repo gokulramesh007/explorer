@@ -1,6 +1,6 @@
 import React from "react";
 import { Strings } from "../../constants";
-import "./Form.css";
+import "./Form.scss";
 
 class Form extends React.Component {
   constructor(props) {
@@ -51,6 +51,7 @@ class Form extends React.Component {
             name="name"
             value={this.state.name}
             onChange={this.handleInputChange}
+            required
           />
         </div>
         <div className="form-element">
@@ -62,6 +63,7 @@ class Form extends React.Component {
             name="homeTown"
             value={this.state.homeTown}
             onChange={this.handleInputChange}
+            required
           />
         </div>
         <div className="form-element">
@@ -73,6 +75,7 @@ class Form extends React.Component {
             name="whereTo"
             value={this.state.whereTo}
             onChange={this.handleInputChange}
+            required
           />
         </div>
         <input

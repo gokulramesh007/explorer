@@ -1,6 +1,6 @@
 import React from "react";
 import {Strings} from "../../constants";
-import "./Banner.css";
+import "./Banner.scss";
 
 const Banner = props => {
     const theme = props.theme === Strings.APPLICATION.HOME_SCREEN.BANNER.THEMES.LIGHT ? props.theme : '';

@@ -1,7 +1,7 @@
 import React from "react";
 import { Images, Strings } from "../../constants";
 import { Button } from "../Button";
-import "./LocationTile.css";
+import "./LocationTile.scss";
 
 const LocationTile = props => {
   const location = props.data.location.toUpperCase();

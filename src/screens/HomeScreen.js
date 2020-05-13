@@ -1,5 +1,5 @@
 import React from "react";
-import "./HomeScreen.css";
+import "./HomeScreen.scss";
 import { Header } from "../components/Header";
 import { Strings } from "../constants";
 import { Banner } from "../components/Banner";

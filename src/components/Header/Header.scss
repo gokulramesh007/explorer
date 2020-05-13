@@ -1,0 +1,27 @@
+/* Header CSS - START */
+.header-container {
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &.dark {
+    background-color: var(--dark-magenta);
+  }
+  &.light {
+    background-color: var(--white);
+  }
+  .title {
+    font-size: var(--h4);
+    text-transform: uppercase;
+    &.dark {
+      color: var(--white);
+    }
+    &.light {
+      color: var(--dark-magenta);
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+/* Header CSS - END */

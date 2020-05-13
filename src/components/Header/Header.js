@@ -3,7 +3,7 @@ import { Strings } from "../../constants";
 import { SearchBar } from "../SearchBar";
 import { FetchAllLocations } from "../../services/LocationService";
 import { withRouter } from "react-router-dom";
-import "./Header.css";
+import "./Header.scss";
 
 class Header extends React.Component {
   constructor(props) {

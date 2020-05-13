@@ -1,5 +1,5 @@
 import React from "react";
-import "./SearchBar.css";
+import "./SearchBar.scss";
 import { withRouter } from "react-router-dom";
 import { Strings } from "../../constants";
 

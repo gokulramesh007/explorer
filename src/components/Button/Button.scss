@@ -1,0 +1,16 @@
+/* Button CSS - START */
+@import '../../styles/themes';
+.button {
+  padding: 10px 20px;
+  border: 1px solid $dark-magenta;
+  text-transform: uppercase;
+  &.dark {
+    background-color: $dark-magenta;
+    color: var(--white);
+  }
+  &.light {
+    background-color: $white;
+    color: $dark-magenta;
+  }
+}
+/* Button CSS - END */

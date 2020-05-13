@@ -1,6 +1,6 @@
 import React from "react";
 import { Strings } from "../../constants";
-import "./Button.css";
+import "./Button.scss";
 import { withRouter } from "react-router-dom";
 
 const Button = props => {

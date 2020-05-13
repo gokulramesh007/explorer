@@ -1,6 +1,6 @@
 import React from "react";
 import { LocationTile } from "../Cards";
-import "./List.css";
+import "./List.scss";
 
 const List = props => {
   const renderLocationTiles = () => {

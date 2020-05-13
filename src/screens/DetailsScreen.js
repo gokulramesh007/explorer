@@ -8,7 +8,7 @@ import {
   FetchSimilarLocations,
   FetchWeather
 } from "../services";
-import "./DetailsScreen.css";
+import "./DetailsScreen.scss";
 export default class DetailsScreen extends React.Component {
   constructor(props) {
     super(props);

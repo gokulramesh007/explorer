@@ -1,6 +1,6 @@
 import React from "react";
 import { Images } from "../../constants";
-import "./Loader.css";
+import "./Loader.scss";
 
 const Loader = () => {
   return (
