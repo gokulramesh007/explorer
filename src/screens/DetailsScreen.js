@@ -35,6 +35,9 @@ export default class DetailsScreen extends React.Component {
   };
 
   componentWillReceiveProps = props => {
+    this.setState({
+      isLoading: true
+    });
     let place = props.match.params.place
       ? props.match.params.place
       : Strings.APPLICATION.DETAILS_SCREEN.DEFAULT_LOCATION;

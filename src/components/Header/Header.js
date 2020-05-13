@@ -43,7 +43,7 @@ class Header extends React.Component {
 
   /**** HELPER FUNCTIONS START ****/
 
-  redirectUser = () => {
+  _redirectUser = () => {
     this.props.history.push("/");
   };
 
@@ -56,7 +56,7 @@ class Header extends React.Component {
         : Strings.APPLICATION.HEADER.THEMES.DARK;
     return (
       <div className={`header-container ${theme}`}>
-        <div className={`title ${theme}`} onClick={this.redirectUser}>
+        <div className={`title ${theme}`} onClick={this._redirectUser}>
           {Strings.APPLICATION.TITLE}
         </div>
         <SearchBar theme={theme} data={this.state.locations} />

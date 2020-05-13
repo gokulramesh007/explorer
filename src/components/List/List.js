@@ -3,7 +3,7 @@ import { LocationTile } from "../Cards";
 import "./List.css";
 
 const List = props => {
-  const renderLocationTiles = () => {
+  const _renderLocationTiles = () => {
     let locationList = [];
     props.data.forEach(item => {
       locationList.push(
@@ -18,7 +18,7 @@ const List = props => {
 
   return (
     <div className={`list-wrapper ${columns}`}>
-      {renderLocationTiles()}
+      {_renderLocationTiles()}
     </div>
   );
 };

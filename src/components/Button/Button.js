@@ -11,11 +11,11 @@ const Button = props => {
     ? props.theme
     : Strings.APPLICATION.HOME_SCREEN.THEMES.DARK;
 
-  const buttonClick = () => {
+  const _buttonClick = () => {
     props.history.push(Strings.APPLICATION.DETAILS_PAGE_ROUTE + props.params);
   };
   return (
-    <button className={`button ${theme}`} onClick={buttonClick}>
+    <button className={`button ${theme}`} onClick={_buttonClick}>
       {buttonText}
     </button>
   );

@@ -23,10 +23,10 @@ class SearchBar extends React.Component {
 
   /**** HELPER FUNCTIONS START ****/
 
-  renderSearchResults = () => {
+  _renderSearchResults = () => {
     let searchResults = [];
     let filteredSuggestions = [];
-    filteredSuggestions = this.filterResults(
+    filteredSuggestions = this._filterResults(
       this.state.suggestions,
       this.state.searchkey
     );
@@ -35,7 +35,7 @@ class SearchBar extends React.Component {
         <div
           className="suggestion-item-wrapper"
           key={item.id}
-          onClick={this.handleSearchChange}
+          onClick={this._handleSearchChange}
         >
           {item.id}
         </div>
@@ -44,7 +44,7 @@ class SearchBar extends React.Component {
     return searchResults;
   };
 
-  handleSearchChange = event => {
+  _handleSearchChange = event => {
     let searchKey = event.target.innerHTML;
     this.setState({
       searchkey: ""
@@ -52,13 +52,13 @@ class SearchBar extends React.Component {
     this.props.history.push(Strings.APPLICATION.DETAILS_PAGE_ROUTE + searchKey);
   };
 
-  handleInputChange = event => {
+  _handleInputChange = event => {
     this.setState({
       searchkey: event.target.value
     });
   };
 
-  filterResults = (suggestions, searchkey) => {
+  _filterResults = (suggestions, searchkey) => {
     let filteredSuggestions = [];
     filteredSuggestions = suggestions.filter(function(suggestion) {
       return suggestion.location.toLowerCase().includes(searchkey);
@@ -78,12 +78,12 @@ class SearchBar extends React.Component {
           className="explorer-search-section"
           value={this.state.searchkey || ""}
           placeholder="Search"
-          onChange={this.handleInputChange}
+          onChange={this._handleInputChange}
         />
         <div
           className={`explorer__suggestions-container ${searchResultsContainer}`}
         >
-          {this.renderSearchResults()}
+          {this._renderSearchResults()}
         </div>
       </div>
     );

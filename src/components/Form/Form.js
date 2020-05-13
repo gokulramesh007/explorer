@@ -10,10 +10,10 @@ class Form extends React.Component {
       homeTown: "",
       whereTo: ""
     };
-    this.handleInputChange = this.handleInputChange.bind(this);
+    this._handleInputChange = this._handleInputChange.bind(this);
   }
 
-  handleInputChange = event => {
+  _handleInputChange = event => {
     const target = event.target;
     const name = target.name;
 
@@ -22,7 +22,7 @@ class Form extends React.Component {
     });
   };
 
-  handleSubmit = event => {
+  _handleSubmit = event => {
     event.preventDefault();
     console.log(
       "Name : " +
@@ -41,7 +41,7 @@ class Form extends React.Component {
 
   render() {
     return (
-      <form className="form-wrapper" onSubmit={this.handleSubmit}>
+      <form className="form-wrapper" onSubmit={this._handleSubmit}>
         <div className="form-element">
           <label htmlFor="name">
             {Strings.APPLICATION.HOME_SCREEN.FORM.CONTACT_US.NAME}
@@ -50,7 +50,8 @@ class Form extends React.Component {
             type="text"
             name="name"
             value={this.state.name}
-            onChange={this.handleInputChange}
+            onChange={this._handleInputChange}
+            required
           />
         </div>
         <div className="form-element">
@@ -61,7 +62,8 @@ class Form extends React.Component {
             type="text"
             name="homeTown"
             value={this.state.homeTown}
-            onChange={this.handleInputChange}
+            onChange={this._handleInputChange}
+            required
           />
         </div>
         <div className="form-element">
@@ -72,7 +74,8 @@ class Form extends React.Component {
             type="text"
             name="whereTo"
             value={this.state.whereTo}
-            onChange={this.handleInputChange}
+            onChange={this._handleInputChange}
+            required
           />
         </div>
         <input
