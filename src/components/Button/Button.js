@@ -1,15 +1,12 @@
 import React from "react";
 import { Strings } from "../../constants";
-import "./Button.css";
+import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
+import "./Button.css";
 
 const Button = props => {
-  const buttonText = props.text
-    ? props.text
-    : Strings.APPLICATION.BUTTON_DEFAULT_TEXT;
-  const theme = props.theme
-    ? props.theme
-    : Strings.APPLICATION.HOME_SCREEN.THEMES.DARK;
+  const buttonText = props.text;
+  const theme = props.theme;
 
   const _buttonClick = () => {
     props.history.push(Strings.APPLICATION.DETAILS_PAGE_ROUTE + props.params);
@@ -19,6 +16,16 @@ const Button = props => {
       {buttonText}
     </button>
   );
+};
+
+Button.defaultProps = {
+  text: "Read More",
+  theme: "dark"
+};
+
+Button.propTypes = {
+  text: PropTypes.string,
+  theme: PropTypes.string
 };
 
 export default withRouter(Button);

@@ -1,9 +1,9 @@
 import React from "react";
-import {Strings} from "../../constants";
+import PropTypes from "prop-types";
 import "./Banner.css";
 
 const Banner = props => {
-    const theme = props.theme === Strings.APPLICATION.HOME_SCREEN.BANNER.THEMES.LIGHT ? props.theme : '';
+  const theme = props.theme;
   return (
     <div className={`banner ${theme}`}>
       <div className={`banner-text ${theme}`}>
@@ -17,6 +17,16 @@ const Banner = props => {
       </div>
     </div>
   );
+};
+
+Banner.defaultProps = {
+  text: ["Explorer"],
+  theme: ""
+};
+
+Banner.propTypes = {
+  text: PropTypes.array,
+  theme: PropTypes.string
 };
 
 export default Banner;

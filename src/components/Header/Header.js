@@ -3,6 +3,7 @@ import { Strings } from "../../constants";
 import { SearchBar } from "../../components";
 import { fetchAllLocations } from "../../services/LocationService";
 import { withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
 import "./Header.css";
 
 class Header extends React.Component {
@@ -50,19 +51,24 @@ class Header extends React.Component {
   /**** HELPER FUNCTIONS END ****/
 
   render() {
-    const theme =
-      this.props.theme === Strings.APPLICATION.HEADER.THEMES.LIGHT
-        ? Strings.APPLICATION.HEADER.THEMES.LIGHT
-        : Strings.APPLICATION.HEADER.THEMES.DARK;
+    const theme = this.props.theme;
     return (
       <div className={`header-container ${theme}`}>
         <div className={`title ${theme}`} onClick={this._redirectUser}>
           {Strings.APPLICATION.TITLE}
         </div>
-        <SearchBar theme={theme} data={this.state.locations} />
+        <SearchBar data={this.state.locations} />
       </div>
     );
   }
 }
+
+Header.defaultProps = {
+  theme: "light"
+};
+
+Header.propTypes = {
+  theme: PropTypes.string
+};
 
 export default withRouter(Header);

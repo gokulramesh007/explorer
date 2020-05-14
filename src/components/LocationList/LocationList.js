@@ -1,5 +1,6 @@
 import React from "react";
 import { LocationTile } from "../../components";
+import PropTypes from "prop-types";
 import "./LocationList.css";
 
 const LocationList = props => {
@@ -21,6 +22,14 @@ const LocationList = props => {
       {_renderLocationTiles()}
     </div>
   );
+};
+
+LocationList.defaultProps = {
+  data: []
+};
+
+LocationList.propTypes = {
+  data: PropTypes.array
 };
 
 export default LocationList;
