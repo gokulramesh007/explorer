@@ -10,11 +10,17 @@ class FormInput extends React.Component {
     this._handleInputChange = this._handleInputChange.bind(this);
   }
 
+  /**** LIFE CYCLE LISTENERS START ****/
+
   componentWillReceiveProps = props => {
     this.setState({
       value: props.value
     });
   };
+
+  /**** LIFE CYCLE LISTENERS END ****/
+
+  /**** HELPER FUNCTIONS START ****/
 
   _handleInputChange = event => {
     const target = event.target;
@@ -23,6 +29,8 @@ class FormInput extends React.Component {
       value: target.value
     });
   };
+
+  /**** HELPER FUNCTIONS END ****/
 
   render() {
     return (
