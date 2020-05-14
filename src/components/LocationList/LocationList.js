@@ -28,7 +28,7 @@ LocationList.defaultProps = {
 };
 
 LocationList.propTypes = {
-  data: PropTypes.array,
+  data: PropTypes.array.isRequired,
   column: PropTypes.string
 };
 

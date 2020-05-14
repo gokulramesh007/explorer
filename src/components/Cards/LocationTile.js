@@ -34,7 +34,7 @@ LocationTile.defaultProps = {
 };
 
 LocationTile.propTypes = {
-  data: PropTypes.object
+  data: PropTypes.object.isRequired
 };
 
 export default LocationTile;

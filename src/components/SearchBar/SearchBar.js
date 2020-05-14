@@ -104,7 +104,7 @@ SearchBar.defaultProps = {
 };
 
 SearchBar.propTypes = {
-  data: PropTypes.array
+  data: PropTypes.array.isRequired
 };
 
 export default withRouter(SearchBar);
