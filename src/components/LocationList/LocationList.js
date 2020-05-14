@@ -1,5 +1,6 @@
 import React from "react";
 import { LocationTile } from "../../components";
+import PropTypes from "prop-types";
 import "./LocationList.css";
 
 const LocationList = props => {
@@ -14,13 +15,21 @@ const LocationList = props => {
     });
     return locationList;
   };
-  const columns = props.column || "three";
-
   return (
-    <div className={`list-wrapper ${columns}`}>
+    <div className={`list-wrapper ${props.column}`}>
       {_renderLocationTiles()}
     </div>
   );
+};
+
+LocationList.defaultProps = {
+  data: [],
+  column: "three"
+};
+
+LocationList.propTypes = {
+  data: PropTypes.array.isRequired,
+  column: PropTypes.string
 };
 
 export default LocationList;

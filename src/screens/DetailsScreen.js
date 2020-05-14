@@ -157,9 +157,7 @@ export default class DetailsScreen extends React.Component {
       this.state.locations[0].title
         ? this.state.locations[0].title
         : "";
-    const imagePath = Images.LOCATIONS[location]
-      ? Images.LOCATIONS[location]
-      : "";
+    const imagePath = Images.LOCATIONS[location] || "";
     return (
       <div>
         <Header theme={Strings.APPLICATION.HEADER.THEMES.DARK} />

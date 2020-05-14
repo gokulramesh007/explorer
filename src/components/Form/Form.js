@@ -1,5 +1,6 @@
 import React from "react";
 import { Strings } from "../../constants";
+import { FormInput } from "../../components";
 import "./Form.css";
 
 class Form extends React.Component {
@@ -10,17 +11,7 @@ class Form extends React.Component {
       homeTown: "",
       whereTo: ""
     };
-    this._handleInputChange = this._handleInputChange.bind(this);
   }
-
-  _handleInputChange = event => {
-    const target = event.target;
-    const name = target.name;
-
-    this.setState({
-      [name]: target.value
-    });
-  };
 
   _handleSubmit = event => {
     event.preventDefault();
@@ -42,42 +33,35 @@ class Form extends React.Component {
   render() {
     return (
       <form className="form-wrapper" onSubmit={this._handleSubmit}>
-        <div className="form-element">
-          <label htmlFor="name">
-            {Strings.APPLICATION.HOME_SCREEN.FORM.CONTACT_US.NAME}
-          </label>
-          <input
-            type="text"
-            name="name"
-            value={this.state.name}
-            onChange={this._handleInputChange}
-            required
-          />
-        </div>
-        <div className="form-element">
-          <label htmlFor="homeTown">
-            {Strings.APPLICATION.HOME_SCREEN.FORM.CONTACT_US.HOME_TOWN}
-          </label>
-          <input
-            type="text"
-            name="homeTown"
-            value={this.state.homeTown}
-            onChange={this._handleInputChange}
-            required
-          />
-        </div>
-        <div className="form-element">
-          <label htmlFor="whereTo">
-            {Strings.APPLICATION.HOME_SCREEN.FORM.CONTACT_US.WHERE_LABEL}
-          </label>
-          <input
-            type="text"
-            name="whereTo"
-            value={this.state.whereTo}
-            onChange={this._handleInputChange}
-            required
-          />
-        </div>
+        <FormInput
+          labelText={Strings.APPLICATION.HOME_SCREEN.FORM.CONTACT_US.NAME}
+          name="name"
+          onChange={name => {
+            this.setState({ name });
+          }}
+          value={this.state.name}
+          required={true}
+        />
+        <FormInput
+          labelText={Strings.APPLICATION.HOME_SCREEN.FORM.CONTACT_US.HOME_TOWN}
+          name="homeTown"
+          onChange={homeTown => {
+            this.setState({ homeTown });
+          }}
+          value={this.state.homeTown}
+          required={true}
+        />
+        <FormInput
+          labelText={
+            Strings.APPLICATION.HOME_SCREEN.FORM.CONTACT_US.WHERE_LABEL
+          }
+          name="whereTo"
+          onChange={whereTo => {
+            this.setState({ whereTo });
+          }}
+          value={this.state.whereTo}
+          required={true}
+        />
         <input
           type="submit"
           value={

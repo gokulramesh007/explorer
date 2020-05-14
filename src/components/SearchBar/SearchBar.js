@@ -1,7 +1,8 @@
 import React from "react";
-import "./SearchBar.css";
+import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 import { Strings } from "../../constants";
+import "./SearchBar.css";
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -42,7 +43,7 @@ class SearchBar extends React.Component {
           </div>
         );
       });
-    } else if(this.state.searchkey) {
+    } else if (this.state.searchkey) {
       searchResults.push(
         <div className="suggestion-item-wrapper" key={0}>
           {Strings.APPLICATION.HEADER.SEARCH.NO_SEARCH_RESULTS}
@@ -97,5 +98,13 @@ class SearchBar extends React.Component {
     );
   }
 }
+
+SearchBar.defaultProps = {
+  data: []
+};
+
+SearchBar.propTypes = {
+  data: PropTypes.array.isRequired
+};
 
 export default withRouter(SearchBar);

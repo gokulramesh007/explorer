@@ -1,7 +1,7 @@
 import Banner from "./Banner/Banner";
 import Button from "./Button/Button";
 import LocationTile from "./Cards/LocationTile";
-import Form from "./Form/Form";
+import { Form, FormInput } from "./Form";
 import Header from "./Header/Header";
 import Loader from "./Loader/Loader";
 import LocationList from "./LocationList/LocationList";
@@ -12,6 +12,7 @@ export {
   Button,
   LocationTile,
   Form,
+  FormInput,
   Header,
   Loader,
   LocationList,
