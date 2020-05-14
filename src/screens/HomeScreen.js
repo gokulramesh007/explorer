@@ -1,6 +1,6 @@
 import React from "react";
 import "./HomeScreen.css";
-import { Header, Banner, LocationList, Loader, Form } from "../components";
+import { Header, Banner, LocationList, Container, Loader, Form } from "../components";
 import { Strings } from "../constants";
 import { fetchAllLocations } from "../services/LocationService";
 export default class HomeScreen extends React.Component {
@@ -50,15 +50,9 @@ export default class HomeScreen extends React.Component {
         <Header />
         <Banner text={bannerText} />
         <div className="location-tile-container">
-          <div className="explore-block">
-            {Strings.APPLICATION.HOME_SCREEN.EXPLORE_TEXT}
-          </div>
-
+          <Container text={Strings.APPLICATION.HOME_SCREEN.EXPLORE_TEXT} />
           <LocationList data={this.state.locations} />
-
-          <div className="explore-block">
-            {Strings.APPLICATION.HOME_SCREEN.LIKE_TO_TRAVEL_TEXT}
-          </div>
+          <Container text={Strings.APPLICATION.HOME_SCREEN.LIKE_TO_TRAVEL_TEXT} />
           <div className="contact-us-form-wrapper">
             <Form />
           </div>
