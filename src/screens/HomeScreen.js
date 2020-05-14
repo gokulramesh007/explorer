@@ -47,11 +47,8 @@ export default class HomeScreen extends React.Component {
     const bannerText = ["Learn", "Why Travelling is Important?"];
     return (
       <div>
-        <Header theme={Strings.APPLICATION.HEADER.THEMES.LIGHT} />
-        <Banner
-          text={bannerText}
-          theme={Strings.APPLICATION.HOME_SCREEN.BANNER.THEMES.DARK}
-        />
+        <Header />
+        <Banner text={bannerText} />
         <div className="location-tile-container">
           <div className="explore-block">
             {Strings.APPLICATION.HOME_SCREEN.EXPLORE_TEXT}

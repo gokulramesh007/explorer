@@ -5,15 +5,12 @@ import { withRouter } from "react-router-dom";
 import "./Button.css";
 
 const Button = props => {
-  const buttonText = props.text;
-  const theme = props.theme;
-
   const _buttonClick = () => {
     props.history.push(Strings.APPLICATION.DETAILS_PAGE_ROUTE + props.params);
   };
   return (
-    <button className={`button ${theme}`} onClick={_buttonClick}>
-      {buttonText}
+    <button className={`button ${props.theme}`} onClick={_buttonClick}>
+      {props.text}
     </button>
   );
 };

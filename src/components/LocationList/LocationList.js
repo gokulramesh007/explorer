@@ -15,21 +15,21 @@ const LocationList = props => {
     });
     return locationList;
   };
-  const columns = props.column || "three";
-
   return (
-    <div className={`list-wrapper ${columns}`}>
+    <div className={`list-wrapper ${props.column}`}>
       {_renderLocationTiles()}
     </div>
   );
 };
 
 LocationList.defaultProps = {
-  data: []
+  data: [],
+  column: "three"
 };
 
 LocationList.propTypes = {
-  data: PropTypes.array
+  data: PropTypes.array,
+  column: PropTypes.string
 };
 
 export default LocationList;

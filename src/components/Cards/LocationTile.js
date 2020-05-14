@@ -1,6 +1,7 @@
 import React from "react";
 import { Images, Strings } from "../../constants";
 import { Button } from "../../components";
+import PropTypes from "prop-types";
 import "./LocationTile.css";
 
 const LocationTile = props => {
@@ -26,6 +27,14 @@ const LocationTile = props => {
       />
     </div>
   );
+};
+
+LocationTile.defaultProps = {
+  data: {}
+};
+
+LocationTile.propTypes = {
+  data: PropTypes.object
 };
 
 export default LocationTile;

@@ -51,10 +51,9 @@ class Header extends React.Component {
   /**** HELPER FUNCTIONS END ****/
 
   render() {
-    const theme = this.props.theme;
     return (
-      <div className={`header-container ${theme}`}>
-        <div className={`title ${theme}`} onClick={this._redirectUser}>
+      <div className={`header-container ${this.props.theme}`}>
+        <div className={`title ${this.props.theme}`} onClick={this._redirectUser}>
           {Strings.APPLICATION.TITLE}
         </div>
         <SearchBar data={this.state.locations} />
