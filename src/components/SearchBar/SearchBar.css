@@ -45,5 +45,6 @@
 }
 .explorer__suggestions-container.show .suggestion-item-wrapper:hover {
   background-color: var(--light-grey);
+  cursor: pointer;
 }
 /* SearchBar CSS - END */
